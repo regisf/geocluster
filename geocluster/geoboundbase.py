@@ -5,6 +5,7 @@
 
 from .geoconvertion import *
 
+
 class GeoBoundBase(object):
     def __init__(self):
         """
@@ -21,10 +22,10 @@ class GeoBoundBase(object):
         :param south: The bottom of the bound as a float
         :param east: The right of the bound as a float
         """
-        assert(isinstance(north, (float, int)))
-        assert(isinstance(west, (float, int)))
-        assert(isinstance(south, (float, int)))
-        assert(isinstance(east, (float, int)))
+        assert (isinstance(north, (float, int)))
+        assert (isinstance(west, (float, int)))
+        assert (isinstance(south, (float, int)))
+        assert (isinstance(east, (float, int)))
 
         if north < 0:
             north = convert_lat_from_gps(north)
@@ -66,5 +67,5 @@ class GeoBoundBase(object):
         Aggregate data or not
         :param clustering: a boolean to indicate if we use aggregation or not
         """
-        assert(isinstance(clustering, bool))
+        assert (isinstance(clustering, bool))
         self.clustering = clustering

@@ -3,14 +3,15 @@
 # (c) Régis FLORET 2014 and later
 #
 
-import random
 from .geoboundbase import GeoBoundBase
-from .geopoint import GeoPoint
 from .geoconvertion import *
+from .geopoint import GeoPoint
+
 
 class GeoBound(GeoBoundBase):
     """ A Geobound is in fact a rectangle
     """
+
     def __init__(self, north, west, south, east):
         """
         Create the bound
@@ -21,8 +22,8 @@ class GeoBound(GeoBoundBase):
         """
         super(GeoBound, self).__init__()
         self.set_bounds(north=north, west=west, south=south, east=east)
-        self.center_lat = self.north + (self.south - self.north)/2.0
-        self.center_lng = self.west + (self.east - self.west)/2.0
+        self.center_lat = self.north + (self.south - self.north) / 2.0
+        self.center_lng = self.west + (self.east - self.west) / 2.0
 
         self.points = []
 
@@ -32,7 +33,7 @@ class GeoBound(GeoBoundBase):
         :param point:
         :return: True if inside, False elsewhere
         """
-        assert(isinstance(point, GeoPoint))
+        assert (isinstance(point, GeoPoint))
         return self.north <= point.lat < self.south and self.west <= point.lng < self.east
 
     def append(self, point):
@@ -41,7 +42,7 @@ class GeoBound(GeoBoundBase):
         :type point: GeoPoint
         :param point: The point to add
         """
-        assert(isinstance(point, GeoPoint))
+        assert (isinstance(point, GeoPoint))
         if not self.contains(point):
             return False
 
@@ -55,7 +56,6 @@ class GeoBound(GeoBoundBase):
         """
         self.compute_center()
         return self.center_lat, self.center_lng
-
 
     def __repr__(self):
         return '<GeoBound({}, {}, {}, {})>'.format(self.north, self.west, self.south, self.east)

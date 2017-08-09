@@ -3,10 +3,12 @@
 # (c) Régis FLORET 2014 and later
 #
 
-__author__ = 'Régis FLORET'
 
 import unittest
+
 import geocluster
+
+__author__ = 'Régis FLORET'
 
 
 class GeoBoundTest(unittest.TestCase):
@@ -14,10 +16,10 @@ class GeoBoundTest(unittest.TestCase):
         """
         Bounds must be converted into radian
         """
-        north=-20.849968961968585
-        south=-21.39184466348015
-        east=55.99046983169558
-        west=55.064185041656515
+        north = -20.849968961968585
+        south = -21.39184466348015
+        east = 55.99046983169558
+        west = 55.064185041656515
 
         bound = geocluster.GeoBound(north=north, south=south, east=east, west=west)
         bound_dir = dir(bound)
@@ -40,7 +42,7 @@ class GeoBoundTest(unittest.TestCase):
         bound = geocluster.GeoBound(north=-20.849968961968585, south=-21.39184466348015,
                                     east=55.99046983169558, west=55.064185041656515)
 
-        point = geocluster.GeoPoint(0,0)
+        point = geocluster.GeoPoint(0, 0)
         self.assertFalse(bound.contains(point))
 
         # If the point is on the south border or the east border, it's not inside

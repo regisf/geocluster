@@ -3,10 +3,11 @@
 # (c) Régis FLORET 2014 and later
 #
 
-__author__ = 'Régis FLORET'
-
 import unittest
+
 import geocluster
+
+__author__ = 'Régis FLORET'
 
 
 class GeoboundBaseTest(unittest.TestCase):
@@ -29,10 +30,10 @@ class GeoboundBaseTest(unittest.TestCase):
     def test_set_bounds(self):
         bound = geocluster.GeoBoundBase()
 
-        north=-20.849968961968585
-        south=-21.39184466348015
-        east=55.99046983169558
-        west=55.064185041656515
+        north = -20.849968961968585
+        south = -21.39184466348015
+        east = 55.99046983169558
+        west = 55.064185041656515
 
         bound.set_bounds(north=south, south=north, east=west, west=east)
 
@@ -52,14 +53,13 @@ class GeoboundBaseTest(unittest.TestCase):
         self.assertIn('east', bound_dir)
         self.assertEqual(bound.east, geocluster.convert_lng_from_gps(east))
 
-
     def test_get_width(self):
         bound = geocluster.GeoBoundBase()
 
-        north=-20.849968961968585
-        south=-21.39184466348015
-        east=55.99046983169558
-        west=55.064185041656515
+        north = -20.849968961968585
+        south = -21.39184466348015
+        east = 55.99046983169558
+        west = 55.064185041656515
 
         bound.set_bounds(north=north, south=south, east=east, west=west)
         self.assertEqual(bound.get_height(), geocluster.convert_lat_from_gps(south) - geocluster.convert_lat_from_gps(north))
@@ -67,11 +67,10 @@ class GeoboundBaseTest(unittest.TestCase):
     def test_get_height(self):
         bound = geocluster.GeoBoundBase()
 
-        north=-20.849968961968585
-        south=-21.39184466348015
-        east=55.99046983169558
-        west=55.064185041656515
+        north = -20.849968961968585
+        south = -21.39184466348015
+        east = 55.99046983169558
+        west = 55.064185041656515
 
         bound.set_bounds(north=north, south=south, east=east, west=west)
         self.assertEqual(bound.get_width(), geocluster.convert_lng_from_gps(east) - geocluster.convert_lng_from_gps(west))
-

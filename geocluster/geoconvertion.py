@@ -10,7 +10,7 @@ def convert_lat_from_gps(value):
     :param value: The lattitude as a float between 0 and -90
     :return: The lattitude in decimal degrees
     """
-    assert(isinstance(value, (int, float)))
+    assert (isinstance(value, (int, float)))
 
     return value if value > 0 else 90 + abs(value)
 
@@ -21,7 +21,7 @@ def convert_lng_from_gps(value):
     :param value: The longitude as a float
     :return: The longitude in decimal degrees
     """
-    assert(isinstance(value, (int, float)))
+    assert (isinstance(value, (int, float)))
     return value if value > 0 else 180 + abs(value)
 
 
@@ -31,7 +31,7 @@ def convert_lat_from_degrees(value):
     :param value: The longitude as a float
     :return: The longitude in GPS coordinate
     """
-    assert(isinstance(value, (int, float)))
+    assert (isinstance(value, (int, float)))
 
     if value > 180:
         raise ValueError("Lattitude in degrees can't be greater than 180")
@@ -47,7 +47,7 @@ def convert_lng_from_degrees(value):
     :param value: The longitude as a float
     :return: The longitude in GPS coordinate
     """
-    assert(isinstance(value, (int, float)))
+    assert (isinstance(value, (int, float)))
 
     if value > 180:
         raise ValueError("Lattitude in degrees can't be greater than 180")

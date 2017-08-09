@@ -8,8 +8,8 @@ from .geoconvertion import *
 
 class GeoPoint(object):
     def __init__(self, lat, lng):
-        assert(isinstance(lat, (int, float)))
-        assert(isinstance(lng, (int, float)))
+        assert (isinstance(lat, (int, float)))
+        assert (isinstance(lng, (int, float)))
 
         self.lat = convert_lat_from_gps(lat)
         self.lng = convert_lng_from_gps(lng)
@@ -25,7 +25,7 @@ class GeoPoint(object):
         :param data: A dictionnary of extra data
         :return: None
         """
-        assert(isinstance(data, dict))
+        assert (isinstance(data, dict))
         self.extra_data.update(data)
 
     def to_json(self):
@@ -35,4 +35,3 @@ class GeoPoint(object):
         })
 
         return self.extra_data
-

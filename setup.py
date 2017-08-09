@@ -3,8 +3,9 @@
 # Setup file for geocluster
 #
 
-from setuptools import setup, find_packages
 import os
+
+from setuptools import setup, find_packages
 
 # Get the description file
 here = os.path.dirname(os.path.abspath(__file__))
@@ -17,7 +18,7 @@ setup(
     version='1.0.1',
     url='http://www.regisblog.fr/geocluster/',
     download_url='https://github.com/regisf/geocluster',
-    platforms=['any',],
+    platforms=['any', ],
     description='GeoCluster is a framework agnostic library to help map clusterization',
     long_description=long_description,
     license='MIT',

@@ -3,11 +3,12 @@
 # (c) Régis FLORET 2014 and later
 #
 
-__author__ = 'Régis FLORET'
 
 import unittest
 
 from geocluster import convert_lng_from_gps, convert_lng_from_degrees, convert_lat_from_gps, convert_lat_from_degrees
+
+__author__ = 'Régis FLORET'
 
 
 class ConvertionTest(unittest.TestCase):
@@ -100,4 +101,3 @@ class ConvertionTest(unittest.TestCase):
         lng = 181
         with self.assertRaises(ValueError):
             response = convert_lat_from_degrees(lng)
-

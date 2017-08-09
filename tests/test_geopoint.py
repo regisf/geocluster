@@ -3,10 +3,11 @@
 # (c) Régis FLORET 2014 and later
 #
 
-__author__ = 'Régis FLORET'
-
 import unittest
+
 import geocluster
+
+__author__ = 'Régis FLORET'
 
 
 class GeoPointTest(unittest.TestCase):

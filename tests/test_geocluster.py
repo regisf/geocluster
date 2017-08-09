@@ -3,10 +3,11 @@
 # (c) Régis FLORET 2014 and later
 #
 
-__author__ = 'Régis FLORET'
-
 import unittest
+
 import geocluster
+
+__author__ = 'Régis FLORET'
 
 
 class GeoclusterTest(unittest.TestCase):
@@ -17,10 +18,10 @@ class GeoclusterTest(unittest.TestCase):
 
     def test_set_grid(self):
         cluster = geocluster.GeoCluster()
-        north=-20.849968961968585
-        south=-21.39184466348015
-        east=55.99046983169558
-        west=55.064185041656515
+        north = -20.849968961968585
+        south = -21.39184466348015
+        east = 55.99046983169558
+        west = 55.064185041656515
 
         cluster.set_bounds(north=north, south=south, east=east, west=west)
         cluster.set_grid(10, 10)

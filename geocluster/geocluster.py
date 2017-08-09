@@ -3,11 +3,6 @@
 # (c) Régis FLORET 2014 and later
 #
 
-import random
-import time
-
-random.seed(time.time())
-
 from .geoconvertion import *
 from .geoboundbase import GeoBoundBase
 from .geobound import GeoBound
@@ -34,8 +29,8 @@ class GeoCluster(GeoBoundBase):
         :param size_lat:
         :return: None
         """
-        assert(isinstance(size_lng, int))
-        assert(isinstance(size_lat, int))
+        assert (isinstance(size_lng, int))
+        assert (isinstance(size_lat, int))
 
         inc_lng = self.get_width() / size_lng
         inc_lat = self.get_height() / size_lat
@@ -60,13 +55,13 @@ class GeoCluster(GeoBoundBase):
         :param lng_name: A string for the longitude key
         :return: None
         """
-        assert(isinstance(data, list))
-        assert(isinstance(lat_name, str))
-        assert(isinstance(lng_name, str))
+        assert (isinstance(data, list))
+        assert (isinstance(lat_name, str))
+        assert (isinstance(lng_name, str))
 
         while len(data):
             d = data[0]
-            assert(isinstance(d, dict))
+            assert (isinstance(d, dict))
 
             p = GeoPoint(d[lat_name], d[lng_name])
             del d[lat_name]
@@ -132,6 +127,7 @@ if __name__ == '__main__':
     """
 
     import sys  # Don't pollute the namespace
+
     if len(sys.argv) != 2:
         sys.exit("Usage : \n    python geocluster.py test")
 
